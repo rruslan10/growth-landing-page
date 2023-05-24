@@ -1,0 +1,47 @@
+@import 'src/assets/design/colors.scss';
+
+.main {
+	height: 710px;
+	display: flex;
+	align-items: center;
+}
+
+.mainWrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mainTitle {
+	font-weight: 300;
+	overflow: hidden;
+	p {
+		font-size: 1.3rem;
+	}
+}
+
+.mainTitleText {
+	font-size: 3.5rem;
+	font-weight: 700;
+	line-height: 0;
+
+	letter-spacing: 2px;
+
+	.greenText {
+		color: $lightGreen;
+	}
+}
+
+.mainTitleTextCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.line {
+		width: 165px;
+		border-top: 10px solid #fff;
+		margin-right: 26px;
+	}
+}

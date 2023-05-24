@@ -1,0 +1,23 @@
+.header {
+	height: 70px;
+}
+
+.headerWrapper {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid white;
+}
+
+.headerTitle {
+	font-weight: 700;
+	font-size: 2.5rem;
+	height: 100%;
+	width: 440px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid white;
+}
