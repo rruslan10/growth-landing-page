@@ -1,22 +1,46 @@
+import { FC } from 'react'
 import Schedule from '../../components/Schedule/Schedule'
 import classes from './ScheduleCall.module.scss'
-const ScheduleCall = () => {
+type ScheduleCallProps = {
+	scheduleCallTitleFirstPhrase: string
+	scheduleCallTitleSecondPhrase: string
+	scheduleCallTitleThirdPhrase: string
+
+	scheduleCallDescriptionFirstPhrase: string
+	scheduleCallDescriptionSecondPhrase: string
+
+	scheduleTitle: string
+	scheduleHref: string
+}
+const ScheduleCall: FC<ScheduleCallProps> = props => {
+	const {
+		scheduleCallTitleFirstPhrase,
+		scheduleCallTitleSecondPhrase,
+		scheduleCallTitleThirdPhrase,
+
+		scheduleCallDescriptionFirstPhrase,
+		scheduleCallDescriptionSecondPhrase,
+
+		scheduleTitle,
+		scheduleHref,
+	} = props
+
 	return (
 		<div className={classes.scheduleCall}>
 			<div className={classes.scheduleCallWrapper}>
 				<div className={classes.yourFutureText}>
-					Your{' '}
+					{scheduleCallTitleFirstPhrase}{' '}
 					<span className={classes.greenText}>
-						future<span className={classes.comma}>&#8218;</span>
+						{scheduleCallTitleSecondPhrase}
 					</span>
 					<br />
-					together.
+					{scheduleCallTitleThirdPhrase}
 				</div>
 				<div className={classes.descriptionText}>
-					We'd love to help bring your next idea to life. <br />
-					Schedule a time with our founders.
+					{scheduleCallDescriptionFirstPhrase} <br />
+					{scheduleCallDescriptionSecondPhrase}
 				</div>
-				<Schedule />
+				<Schedule scheduleText={scheduleTitle} href={scheduleHref} />
 			</div>
 		</div>
 	)

@@ -1,11 +1,13 @@
+import { FC } from 'react'
 import classes from './Tablet.module.scss'
-const Tablet = () => {
+type TabletProps = {
+	tabletDecorImg: string
+}
+const Tablet: FC<TabletProps> = props => {
+	const { tabletDecorImg } = props
 	return (
 		<div className={classes.tablet}>
-			<img
-				src='https://assets-global.website-files.com/62a059f7c3b9147ea6a4afb2/62aaeea5395fe18478b76910_point.svg'
-				alt='about'
-			/>
+			<img src={tabletDecorImg} alt='about' />
 		</div>
 	)
 }

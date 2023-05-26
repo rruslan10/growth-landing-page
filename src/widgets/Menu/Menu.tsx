@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import Service from '../../components/Service/Service'
 import classes from './Menu.module.scss'
 
-const Menu = () => {
+type MenuProps = {
+	serviceCounter: string
+	serviceName: string
+}
+const Menu: FC<MenuProps> = props => {
+	const { serviceCounter, serviceName } = props
 	const [show, setShow] = useState(false)
 	return (
 		<div className={classes.menu}>
@@ -15,7 +20,7 @@ const Menu = () => {
 			</button>
 			{show && (
 				<div className={classes.menuWrapper}>
-					<Service />
+					<Service serviceCounter={serviceCounter} serviceName={serviceName} />
 				</div>
 			)}
 		</div>

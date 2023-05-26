@@ -1,12 +1,21 @@
+import { FC } from 'react'
 import Menu from '../Menu/Menu'
 import classes from './Header.module.scss'
-const Header = () => {
+
+type HeaderProps = {
+	headerTitle: string
+	serviceCounter: string
+	serviceName: string
+}
+
+const Header: FC<HeaderProps> = props => {
+	const { headerTitle, serviceCounter, serviceName } = props
 	return (
 		<div className={classes.header}>
 			<div className={classes.headerWrapper}>
-				<div className={classes.headerTitle}>Growth</div>
+				<div className={classes.headerTitle}>{headerTitle}</div>
 
-				<Menu />
+				<Menu serviceCounter={serviceCounter} serviceName={serviceName} />
 			</div>
 		</div>
 	)
